@@ -1,0 +1,8 @@
+name: SpeedMiner
+version: 1.0-SNAPSHOT
+main: com.example.speedminer.SpeedMiner
+api-version: '1.21'
+commands:
+  speedminer:
+    description: Manage SpeedMiner game
+    usage: /speedminer <start|stop|stats|top>
