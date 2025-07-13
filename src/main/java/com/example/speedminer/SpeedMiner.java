@@ -3,6 +3,8 @@ package com.example.speedminer;
 import com.example.speedminer.database.DatabaseManager;
 import com.example.speedminer.game.GameManager;
 import com.example.speedminer.game.ArenaManager;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SpeedMiner extends JavaPlugin {
@@ -18,6 +20,8 @@ public class SpeedMiner extends JavaPlugin {
         arenaManager = new ArenaManager(this);
         gameManager = new GameManager(this, arenaManager);
 
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[SpeedMiner] Plugin enabled!");
+
         if (getCommand("speedminer") != null) {
             getCommand("speedminer").setExecutor(gameManager);
         }
@@ -32,6 +36,8 @@ public class SpeedMiner extends JavaPlugin {
         if (databaseManager != null) {
             databaseManager.close();
         }
+
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[SpeedMiner] Plugin disabled!");
     }
 
     public DatabaseManager getDatabaseManager() {

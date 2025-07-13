@@ -134,7 +134,7 @@ public class GameManager implements CommandExecutor, Listener {
             UUID uuid = sorted.get(i).getKey();
             int points = sorted.get(i).getValue();
             String name = Bukkit.getOfflinePlayer(uuid).getName();
-            Bukkit.broadcastMessage(ChatColor.AQUA + (i + 1) + ". " + name + " - " + points + " points");
+            Bukkit.broadcastMessage(ChatColor.AQUA + "" + (i + 1) + ". " + name + " - " + points + " points");
             db.saveStats(uuid, name, points);
         }
     }
