@@ -31,7 +31,7 @@ public class DatabaseManager {
                         "uuid TEXT NOT NULL," +
                         "name TEXT NOT NULL," +
                         "points INTEGER NOT NULL," +
-                        "last_played TIMESTAMP DEFAULT CURRENT_TIMESTAMP");
+                        "last_played TIMESTAMP DEFAULT CURRENT_TIMESTAMP)");
             }
         } catch (SQLException e) {
             e.printStackTrace();
