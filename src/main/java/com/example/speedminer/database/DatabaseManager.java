@@ -25,13 +25,13 @@ public class DatabaseManager {
             String pass = plugin.getConfig().getString("database.password", "");
             connection = DriverManager.getConnection(url, user, pass);
             try (Statement stmt = connection.createStatement()) {
-                stmt.executeUpdate("CREATE TABLE IF NOT EXISTS speedminer_stats (" +
+                stmt.executeUpdate(
+                        "CREATE TABLE IF NOT EXISTS speedminer_stats(" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "uuid TEXT NOT NULL," +
                         "name TEXT NOT NULL," +
                         "points INTEGER NOT NULL," +
-                        "last_played TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-                );
+                        "last_played TIMESTAMP DEFAULT CURRENT_TIMESTAMP");
             }
         } catch (SQLException e) {
             e.printStackTrace();
